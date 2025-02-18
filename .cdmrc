@@ -1,2 +1,2 @@
 run-button: clear && node app.js
-playground-view: terminal-editor-browser
+playground-view: terminal-editor
