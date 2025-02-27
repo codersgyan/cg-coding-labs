@@ -1,0 +1,3 @@
+tabs: ['organize.sh', 'README.md']
+playground-view: terminal-editor
+run-button: clear && ./organize.sh
