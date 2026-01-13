@@ -1,10 +1,11 @@
-function Header() {
+import React from "react";
+import Header from "./Header";
+const App = () => {
   return (
-  
-      <h1>Welcome to Coder&apos;s Gyan </h1>
-      <p>Sharpen your fundamentals. Build with clarity.</p>
-   
+    <div>
+      <Header />
+    </div>
   );
-}
+};
 
-export default Header;
+export default App;
