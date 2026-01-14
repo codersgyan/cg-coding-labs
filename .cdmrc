@@ -1,0 +1,2 @@
+terminals: ["npm i && npm run dev"]
+tabs: ["src/App.jsx"]
