@@ -1,0 +1,54 @@
+/* App.css */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #1e1e2e, #11111b);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #cdd6f4;
+  margin: 0;
+}
+
+.card {
+  padding: 3rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(137, 180, 250, 0.5);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.subtitle {
+  color: #a6adc8;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.status-tag {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 5px 15px;
+  background: rgba(137, 180, 250, 0.1);
+  border-radius: 20px;
+  color: #89b4fa;
+  font-size: 0.8rem;
+  border: 1px solid rgba(137, 180, 250, 0.2);
+}
