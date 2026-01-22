@@ -1,2 +1,2 @@
 terminals: ["npm i && npm run dev"]
-tabs: ["src/App.jsx"]
+tabs: ["src/App.jsx","src/NumberList.jsx"]
