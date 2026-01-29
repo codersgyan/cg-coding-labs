@@ -1,54 +1,107 @@
-/* App.css */
+/* App.css — Reimagined */
+
+:root {
+  --bg: #0b0f14;
+  --panel: #111827;
+  --accent: #f4c430;
+  --text-primary: #f9fafb;
+  --text-muted: #9ca3af;
+  --glow: rgba(244, 196, 48, 0.35);
+}
+
 .container {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at top left, #1e1e2e, #11111b);
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #cdd6f4;
-  margin: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 20% 10%, #1f2933 0%, transparent 40%),
+    radial-gradient(circle at 80% 90%, #020617 0%, #000 60%);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: var(--text-primary);
 }
 
+/* Card becomes a PANEL */
 .card {
-  padding: 3rem;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-  text-align: center;
-  transition: transform 0.3s ease;
+  position: relative;
+  padding: 3.5rem 4rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 30px 80px rgba(0, 0, 0, 0.9);
+  text-align: left;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
+/* Intentional hover — less float, more power */
 .card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(137, 180, 250, 0.5);
+  transform: scale(1.015);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 40px 120px rgba(0, 0, 0, 1);
 }
 
+/* Accent line — identity marker */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent), transparent);
+  border-radius: 16px 0 0 16px;
+}
+
+/* Typography does the flexing now */
 .title {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 3.2rem;
+  font-weight: 900;
   margin: 0;
+  letter-spacing: -1px;
+  line-height: 1;
 }
 
 .subtitle {
-  color: #a6adc8;
-  font-size: 1.2rem;
-  margin-top: 10px;
-  font-weight: 300;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  color: var(--text-muted);
 }
 
+/* Status becomes a SYSTEM BADGE */
 .status-tag {
-  margin-top: 2rem;
-  display: inline-block;
-  padding: 5px 15px;
-  background: rgba(137, 180, 250, 0.1);
-  border-radius: 20px;
-  color: #89b4fa;
-  font-size: 0.8rem;
-  border: 1px solid rgba(137, 180, 250, 0.2);
+  margin-top: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(244, 196, 48, 0.08);
+  border: 1px solid rgba(244, 196, 48, 0.25);
+  box-shadow: inset 0 0 12px var(--glow);
+}
+
+/* Optional pulse dot */
+.status-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--glow);
 }
