@@ -5,10 +5,7 @@ const App = () => {
   const isAuth = false;
   return (
     <Routes>
-      <Route
-        path="/dashboard"
-        element={isAuth ? <Dashboard /> : <Navigate to="/login" />}
-      />
+      <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/login" element={<Login />} />
     </Routes>
   );
